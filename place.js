@@ -28,7 +28,10 @@ class Place{
         let menorX = ix > fx ? fx : ix;
         let maiorY = iy > fy ? iy : fy;
         let menorY = iy > fy ? fy : iy;
-        if(this.x > menorX && this.x < maiorX && this.y > menorY && this.y < maiorY){
+        if(
+          this.x > menorX && this.x < maiorX &&
+          this.y > menorY && this.y < maiorY
+        ){
             if(!this.selected){
                 this.select();
                 return true;

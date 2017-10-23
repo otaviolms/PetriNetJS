@@ -12,7 +12,10 @@ class Tool{
     }
     
     clicado(x, y){
-        if(x > this.x && x < (this.width + this.x) && y > this.y && y < (this.height + this.y)){
+        if(
+            x > this.x && x < (this.width + this.x) &&
+            y > this.y && y < (this.height + this.y))
+        {
             this.select();
             return true;
         }
