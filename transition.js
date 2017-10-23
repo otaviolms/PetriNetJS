@@ -10,18 +10,18 @@ class Transition{
         this.width = 10;
         this.height = 26;
     }
-    
+
     move(x, y){
         this.x = x;
         this.y = y;
     }
-    
+
     rotate(){
         let aux = this.width;
         this.width = this.height;
         this.height = aux;
     }
-    
+
     clicado(x, y){
         if(
             x > (this.x - this.width/2) && x < ((this.width/2) + this.x) &&
@@ -31,7 +31,7 @@ class Transition{
             return true;
         }
     }
-    
+
     intersect(ix, iy, fx, fy){
         let maiorX = ix > fx ? ix : fx;
         let menorX = ix > fx ? fx : ix;
@@ -49,7 +49,7 @@ class Transition{
             this.desSelect();
         }
     }
-    
+
     selectArc(){
         this.color = {
             'r':255,
@@ -58,7 +58,7 @@ class Transition{
         };
         this.selected = true;
     }
-    
+
     select(){
         this.color = {
             'r':150,
@@ -67,7 +67,7 @@ class Transition{
         };
         this.selected = true;
     }
-    
+
     desSelect(){
         this.color = {
             'r':255,

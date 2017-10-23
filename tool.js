@@ -10,7 +10,7 @@ class Tool{
             'b':255
         };
     }
-    
+
     clicado(x, y){
         if(
             x > this.x && x < (this.width + this.x) &&
@@ -20,7 +20,7 @@ class Tool{
             return true;
         }
     }
-    
+
     select(){
         this.color = {
             'r':255,
@@ -29,7 +29,7 @@ class Tool{
         };
         this.selected = true;
     }
-    
+
     desSelect(){
         this.color = {
             'r':150,

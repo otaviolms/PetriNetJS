@@ -9,12 +9,12 @@ class Place{
         };
         this.size = 25;
     }
-    
+
     move(x, y){
         this.x = x;
         this.y = y;
     }
-    
+
     clicado(x, y){
         let d = dist(x, y, this.x, this.y);
         if(d < (this.size / 2)){
@@ -22,7 +22,7 @@ class Place{
             return true;
         }
     }
-    
+
     intersect(ix, iy, fx, fy){
         let maiorX = ix > fx ? ix : fx;
         let menorX = ix > fx ? fx : ix;
@@ -40,7 +40,7 @@ class Place{
             this.desSelect();
         }
     }
-    
+
     selectArc(){
         this.color = {
             'r':255,
@@ -49,7 +49,7 @@ class Place{
         };
         this.selected = true;
     }
-    
+
     select(){
         this.color = {
             'r':150,
@@ -58,7 +58,7 @@ class Place{
         };
         this.selected = true;
     }
-    
+
     desSelect(){
         this.color = {
             'r':255,

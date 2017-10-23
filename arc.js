@@ -2,12 +2,12 @@ class Arc{
     constructor(origem){
         this.origem = origem;
     }
-    
+
     to(destino){
         console.log('DESTINO');
         this.destino = destino;
     }
-    
+
     show(){
         stroke(0);
         if(this.destino){
