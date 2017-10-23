@@ -10,31 +10,37 @@ class Transition{
         this.width = 10;
         this.height = 26;
     }
-    
+
     move(x, y){
         this.x = x;
         this.y = y;
     }
-    
+
     rotate(){
         let aux = this.width;
         this.width = this.height;
         this.height = aux;
     }
-    
+
     clicado(x, y){
-        if(x > (this.x - this.width/2) && x < ((this.width/2) + this.x) && y > (this.y - this.height/2) && y < ((this.height/2) + this.y)){
+        if(
+            x > (this.x - this.width/2) && x < ((this.width/2) + this.x) &&
+          y > (this.y - this.height/2) && y < ((this.height/2) + this.y)
+        ){
             this.select();
             return true;
         }
     }
-    
+
     intersect(ix, iy, fx, fy){
         let maiorX = ix > fx ? ix : fx;
         let menorX = ix > fx ? fx : ix;
         let maiorY = iy > fy ? iy : fy;
         let menorY = iy > fy ? fy : iy;
-        if(this.x > menorX && this.x < maiorX && this.y > menorY && this.y < maiorY){
+        if(
+            this.x > menorX && this.x < maiorX &&
+            this.y > menorY && this.y < maiorY
+        ){
             if(!this.selected){
                 this.select();
                 return true;
@@ -43,7 +49,7 @@ class Transition{
             this.desSelect();
         }
     }
-    
+
     selectArc(){
         this.color = {
             'r':255,
@@ -52,7 +58,7 @@ class Transition{
         };
         this.selected = true;
     }
-    
+
     select(){
         this.color = {
             'r':150,
@@ -61,7 +67,7 @@ class Transition{
         };
         this.selected = true;
     }
-    
+
     desSelect(){
         this.color = {
             'r':255,
