@@ -44,11 +44,7 @@ function draw() {
     if(select){
         select.show(mouseX, mouseY);
     }
-
-//    cursor(tools[tool].cursor);
 }
-
-
 
 //=============================================== TECLADO ===============================================
 function keyPressed() {
@@ -224,12 +220,7 @@ function keyPressed() {
     }
 }
 
-
-
-
-
 //=============================================== MOUSE ===============================================
-
 function mousePressed() {
     for(let i = 0; i < tools.length; i++){
         if(tools[i].clicado(mouseX, mouseY)){
@@ -318,14 +309,15 @@ function mouseDragged(){
         case 1:
             if(select){
                 for(let i = 0; i < places.length; i++){
-                    places[i].intersect(
+                    if(!places[i].intersect(
                       select.initX, select.initY, mouseX, mouseY
-                    );
-                }
-                for(let i = 0; i < transitions.length; i++){
-                    transitions[i].intersect(
-                      select.initX, select.initY, mouseX, mouseY
-                    );
+                    )){
+                        for(let i = 0; i < transitions.length; i++){
+                            transitions[i].intersect(
+                              select.initX, select.initY, mouseX, mouseY
+                            );
+                        }
+                    }
                 }
             } else if(sel >= 0){
                 let difx = pmouseX - mouseX;
@@ -377,12 +369,7 @@ function mouseReleased(){
     select = null;
 }
 
-
-
-
-
 //=============================================== MÉTODOS ===============================================
-
 function existeSelecionados(){
     for(let i = 0; i < places.length; i++){
         if(places[i].selected){
