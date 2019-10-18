@@ -44,11 +44,7 @@ function draw() {
     if(select){
         select.show(mouseX, mouseY);
     }
-
-//    cursor(tools[tool].cursor);
 }
-
-
 
 //=============================================== TECLADO ===============================================
 function keyPressed() {
@@ -224,12 +220,7 @@ function keyPressed() {
     }
 }
 
-
-
-
-
 //=============================================== MOUSE ===============================================
-
 function mousePressed() {
     for(let i = 0; i < tools.length; i++){
         if(tools[i].clicado(mouseX, mouseY)){
@@ -377,12 +368,7 @@ function mouseReleased(){
     select = null;
 }
 
-
-
-
-
 //=============================================== MÉTODOS ===============================================
-
 function existeSelecionados(){
     for(let i = 0; i < places.length; i++){
         if(places[i].selected){
