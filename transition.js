@@ -47,6 +47,7 @@ class Transition{
             }
         } else {
             this.desSelect();
+            return false;
         }
     }
 

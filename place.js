@@ -38,6 +38,7 @@ class Place{
             }
         } else {
             this.desSelect();
+            return false;
         }
     }
 

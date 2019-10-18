@@ -309,14 +309,15 @@ function mouseDragged(){
         case 1:
             if(select){
                 for(let i = 0; i < places.length; i++){
-                    places[i].intersect(
+                    if(!places[i].intersect(
                       select.initX, select.initY, mouseX, mouseY
-                    );
-                }
-                for(let i = 0; i < transitions.length; i++){
-                    transitions[i].intersect(
-                      select.initX, select.initY, mouseX, mouseY
-                    );
+                    )){
+                        for(let i = 0; i < transitions.length; i++){
+                            transitions[i].intersect(
+                              select.initX, select.initY, mouseX, mouseY
+                            );
+                        }
+                    }
                 }
             } else if(sel >= 0){
                 let difx = pmouseX - mouseX;
